@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+/* Typography */
+body, header {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+h1, h2, p {
+    color: #2E5266;
+    text-align: center
+}
+
+p{
+    font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+h2{
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.header-bold {
+    font-weight: 900;
+}
+
+.caption {
+    text-align: center;
+    font-size: small;
+    margin-top: 10px;
+    color: #2E5266;
+}
+
+/* Intro Section Layout */
+#main-section {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2em;
+  max-width: 1500px;
+  width: 100%;
+  gap: 2em;
+  box-sizing: border-box;
+}
+
+/* Main Image */
+.intro-image {
+  width: 40%;
+  height: auto;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+/* Text Column */
+.intro-text {
+  flex: 1;
+}
+
+#main-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+#main-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+  .intro-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-image {
+    width: 80%;
+  }
+
+  #main-title {
+    font-size: 1.6em;
+  }
+
+  #main-text {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #main-title {
+    font-size: 1.3em;
+  }
+
+  #main-text {
+    font-size: 0.9em;
+  }
+}
+
+/* Programming Projects Section */
+#projects-section {
+  padding: 2em;
+  text-align: center;
+}
+
+#projects-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+#projects-section li {
+  background-color: white;
+  border-radius: 20px;
+  padding: 1em 2em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: fit-content;
+  max-width: 90%;
+}
+
+#projects-section li:hover {
+  transform: scale(1.05);
+}
+
+#projects-section a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+
+/* Layout */
+body {
+    background-color: #D3D0CB;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* Art Section */
+#art {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 2em;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+/* Art Box */
+.art-box {
+    background-color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    width: auto;
+    max-width: 100%;
+
+    transition: transform 0.4s ease;
+    z-index: 1;
+
+
+}
+
+/* Image inside Art Box */
+.art-box img {
+    max-height: 240px;
+    max-width: 100%;
+    border-radius: 25px;
+    object-fit: contain;
+}
+
+.art-box:hover {
+    transform: scale(1.5) translateY(-40px);
+    z-index: 10;
+}
+
+/* Music Section */
+#music-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 2em;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+/* Music Box */
+.music-box {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    width: 400px;
+    max-width: 100%;
+
+    transition: transform 0.4s ease;
+    z-index: 1;
+
+
+}
+
+/* Other Images */
+img.funborder {
+    border-radius: 25px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links */
+a:link {
+    color: #2E5266;
+}
+a:visited {
+    color: #370031;
+}
+a:focus {
+    color: #370031;
+}
+a:hover {
+    color: #DD7230;
+}
+a:active {
+    color: #DD7230;
+}
