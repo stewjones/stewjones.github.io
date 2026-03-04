@@ -42,74 +42,97 @@
             <p class="caption">Here are some instrumental snippets/songs I have made. I am currently working towards making a hip-hop inspired project with my own vocals,
                 and some of these are the instrumental versions of these tracks. I also have made tracks in the past for my friends' videos/projects!
             </p>
-            <div id="music-area">
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/caesar.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">caesar.mp3</p>
+
+            <div class="music-player-shell">
+                <!-- Top "Now Playing" area -->
+                <div class="now-playing">
+                    <button class="np-play" id="npPlay" type="button" aria-label="Play/Pause">
+                    ▶
+                    </button>
+
+                    <div class="np-meta">
+                    <div class="np-title" id="npTitle">Select a track</div>
+
+                    <div class="np-progress-row">
+                        <span class="np-time" id="npTime">0:00</span>
+
+                        <input
+                        class="np-progress"
+                        id="npProgress"
+                        type="range"
+                        min="0"
+                        max="1000"
+                        value="0"
+                        step="1"
+                        aria-label="Seek"
+                        />
+
+                        <span class="np-time" id="npDuration">0:00</span>
+                    </div>
+                    </div>
                 </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/bb.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">bb.mp3</p>
+
+                <!-- Scrollable track list -->
+                <div class="track-list" id="trackList" role="listbox" aria-label="Track list">
+                    <button class="track-row" type="button" data-src="music/caesar.mp3" data-title="caesar.mp3" role="option">
+                    <span class="track-index">1.</span>
+                    <span class="track-name">caesar.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/bb.mp3" data-title="bb.mp3" role="option">
+                    <span class="track-index">2.</span>
+                    <span class="track-name">bb.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/lfms.mp3" data-title="lfms.mp3" role="option">
+                    <span class="track-index">3.</span>
+                    <span class="track-name">lfms.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/swaw.mp3" data-title="swaw.mp3" role="option">
+                    <span class="track-index">4.</span>
+                    <span class="track-name">swaw.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/fruity.mp3" data-title="fruity.mp3" role="option">
+                    <span class="track-index">5.</span>
+                    <span class="track-name">fruity.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/lw.mp3" data-title="lw.mp3" role="option">
+                    <span class="track-index">6.</span>
+                    <span class="track-name">lw.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/homey.mp3" data-title="homey.mp3" role="option">
+                    <span class="track-index">7.</span>
+                    <span class="track-name">homey.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/runt.mp3" data-title="runt.mp3" role="option">
+                    <span class="track-index">8.</span>
+                    <span class="track-name">runt.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/tub.mp3" data-title="tub.mp3" role="option">
+                    <span class="track-index">9.</span>
+                    <span class="track-name">tub.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/spaceslop.mp3" data-title="spaceslop.mp3" role="option">
+                    <span class="track-index">10.</span>
+                    <span class="track-name">spaceslop.mp3</span>
+                    </button>
+
+                    <button class="track-row" type="button" data-src="music/stupid_mode.mp3" data-title="stupid_mode.mp3" role="option">
+                    <span class="track-index">11.</span>
+                    <span class="track-name">stupid_mode.mp3</span>
+                    </button>
                 </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/lfms.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">lfms.mp3</p>
+
+                <!-- The actual audio element (hidden UI; we build our own controls) -->
+                <audio id="audio" preload="metadata"></audio>
                 </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/swaw.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">swaw.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/fruity.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">fruity.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/lw.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">lw.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/homey.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">homey.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/runt.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">runt.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/tub.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">tub.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/spaceslop.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">spaceslop.mp3</p>
-                </div>
-                <div class="music-box">
-                    <audio controls>
-                        <source src="music/stupid_mode.mp3" type="audio/mpeg">
-                    </audio> 
-                    <p class="caption">stupid_mode.mp3</p>
-                </div>
-            </div>
         </section>
         <h2 class="header-bold">My Art</h2>
                     <p class="caption">Here are my most recent drawings! Some of these were for my card game class project, Creature Cattleman, while others are drawings I made for others
@@ -154,6 +177,6 @@
             </div>
         </section>
     </main>
-    
+    <script src="music-player.js"></script>
 </body>
 </html>

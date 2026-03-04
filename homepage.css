@@ -255,3 +255,145 @@ a:hover {
 a:active {
     color: #DD7230;
 }
+
+/* --- Scrollable music player (new) --- */
+.music-player-shell {
+  width: min(800px, calc(100% - 2rem));
+  height: 600px;
+  margin: 0 auto 2em auto;
+
+  background: white;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* top area */
+.now-playing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 12px;
+  border-radius: 18px;
+  background: #f4f4f4;
+  box-sizing: border-box;
+}
+
+.np-play {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+
+  background: #2E5266;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.np-meta {
+  flex: 1;
+  min-width: 0; /* allows ellipsis */
+}
+
+.np-title {
+  font-weight: 800;
+  color: #2E5266;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.np-progress-row {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.np-time {
+  font-size: 12px;
+  color: #2E5266;
+  text-align: center;
+}
+
+.np-progress {
+  width: 100%;
+}
+
+/* scrollable list */
+.track-list {
+  flex: 1;
+  overflow-y: auto;
+
+  border-radius: 18px;
+  background: #fafafa;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* individual rows */
+.track-row {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: white;
+  cursor: pointer;
+
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.track-row:last-child {
+  margin-bottom: 0;
+}
+
+.track-index {
+  width: 24px;
+  text-align: right;
+  color: #2E5266;
+  font-weight: 800;
+}
+
+.track-name {
+  flex: 1;
+  text-align: left;
+  color: #2E5266;
+  font-weight: 700;
+}
+
+/* selected row */
+.track-row.is-selected {
+  border-color: #2E5266;
+  background: #e8eef2;
+}
+
+/* nicer scrolling on iOS */
+.track-list {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* optional: slightly tighter on very small screens */
+@media screen and (max-width: 380px) {
+  .music-player-shell {
+    height: 600px; /* keep fixed like you wanted */
+    padding: 12px;
+  }
+  .np-progress-row {
+    grid-template-columns: 40px 1fr 40px;
+    gap: 8px;
+  }
+}
