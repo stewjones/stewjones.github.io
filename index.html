@@ -3,180 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="homepage.css">
     <title>Stewart Jones</title>
 </head>
 <body>
-    <main>
-        <section id="main-section">
-            <div class="intro-box">
-                <img src="images/stewart-bird.png" alt="a picture of meeeeeee!" class="intro-image funborder" />
+    <main class="site-shell">
+        <section id="main-section" class="section-card intro-card">
+            <div class="intro-layout">
+                <img src="images/stewart-bird.png" alt="Portrait of Stewart Jones" class="intro-image" />
+
                 <div class="intro-text">
-                    <h2 id="main-title">
-                        Hi! I'm Stewart Jones!
-                    </h2>
-                    <p id="main-text">
-                        I am a soon to be 4th year student at Rochester Institute of Technology currently pursuing a degree in Game Design and Development. 
-                        While I've been taking classes at RIT that focus on the programming, production, and design of video games, I also have a lot of passion for
-                        drawing and music as well! On this page, you will find links to a number of the class projects I have made over my studies, as well as personal projects,
-                        such as my music productions and drawings.
+                    <p class="eyebrow">Game Design • Audio • Visual Art</p>
+                    <h1 id="main-title">Hi, I’m Stewart Jones.</h1>
+                    <p id="main-text" class="section-description">
+                        I am a soon-to-be fourth-year student at Rochester Institute of Technology pursuing a degree in Game Design and Development.
+                        My work centers around interactive media, with interests spanning game development, music production, and illustration.
+                        This portfolio highlights selected creative work across audio, visual art, and personal projects.
                     </p>
-                    <p 
-                        class="caption">781-467-8767 | <a href= "mailto:saj8580@g.rit.edu">saj8580@rit.edu</a> | <a href="https://www.linkedin.com/in/stewart-jones/">LinkedIn</a> | <a href="Stewart_Jones_Resume_6_15_2025.pdf">Resume</a>
+
+                    <p class="contact-line">
+                        <span>781-467-8767</span>
+                        <span>|</span>
+                        <a href="mailto:saj8580@g.rit.edu">saj8580@rit.edu</a>
+                        <span>|</span>
+                        <a href="https://www.linkedin.com/in/stewart-jones/">LinkedIn</a>
+                        <span>|</span>
+                        <a href="Stewart_Jones_Resume_6_15_2025.pdf">Resume</a>
                     </p>
                 </div>
             </div>
         </section>
-        <section id="projects-section">
-            <h2 class="header-bold"> 
-                Programming Projects
-            </h2>
-            <ul>
+
+        <section id="projects-section" class="section-card">
+            <div class="section-heading">
+                <h2>Programming Projects</h2>
+                <p class="section-description">
+                    A few class and personal projects that reflect my programming background in interactive media and game development.
+                </p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <ul class="pill-list">
                 <li><a href="https://people.rit.edu/saj8580/330/refactor/jones-s-hw2/index.html">Stellar Visualizer</a></li>
                 <li><a href="https://people.rit.edu/saj8580/235/project3/">Minesweep</a></li>
                 <li><a href="https://people.rit.edu/saj8580/235/amiibo-search/">Amiibo Search</a></li>
             </ul>
         </section>
-        <section id="music-section">
-            <h2 class="header-bold">My Music</h2>
-            <p class="caption">Here are some instrumental snippets/songs I have made. I am currently working towards making a hip-hop inspired project with my own vocals,
-                and some of these are the instrumental versions of these tracks. I also have made tracks in the past for my friends' videos/projects!
-            </p>
 
-            <div class="music-player-shell">
-                <!-- Top "Now Playing" area -->
-                <div class="now-playing">
-                    <button class="np-play" id="npPlay" type="button" aria-label="Play/Pause">
-                    ▶
-                    </button>
+        <section id="music-section" class="section-card">
+            <div class="section-heading">
+                <h2>My Music</h2>
+                <p class="section-description">
+                    Here are instrumental snippets and songs I have produced. Much of my recent work leans into hip-hop-inspired production,
+                    while some older tracks were created for collaborative projects and videos.
+                </p>
+            </div>
 
-                    <div class="np-meta">
-                    <div class="np-title" id="npTitle">Select a track</div>
+            <div class="section-divider"></div>
 
-                    <div class="np-progress-row">
-                        <span class="np-time" id="npTime">0:00</span>
+            <div class="music-layout">
+                <div class="music-player-shell">
+                    <div class="now-playing">
+                        <button class="np-play" id="npPlay" type="button" aria-label="Play or pause track">
+                            ▶
+                        </button>
 
-                        <input
-                        class="np-progress"
-                        id="npProgress"
-                        type="range"
-                        min="0"
-                        max="1000"
-                        value="0"
-                        step="1"
-                        aria-label="Seek"
-                        />
+                        <div class="np-meta">
+                            <div class="np-title" id="npTitle">Select a track</div>
 
-                        <span class="np-time" id="npDuration">0:00</span>
+                            <div class="np-progress-row">
+                                <span class="np-time" id="npTime">0:00</span>
+
+                                <input
+                                    class="np-progress"
+                                    id="npProgress"
+                                    type="range"
+                                    min="0"
+                                    max="1000"
+                                    value="0"
+                                    step="1"
+                                    aria-label="Seek through track"
+                                />
+
+                                <span class="np-time" id="npDuration">0:00</span>
+                            </div>
+                        </div>
                     </div>
-                    </div>
+
+                    <div class="track-list" id="trackList" role="listbox" aria-label="Track list"></div>
+
+                    <audio id="audio" preload="metadata"></audio>
                 </div>
 
-                <!-- Scrollable track list -->
-                <div class="track-list" id="trackList" role="listbox" aria-label="Track list">
-                    <button class="track-row" type="button" data-src="music/caesar.mp3" data-title="caesar.mp3" role="option">
-                    <span class="track-index">1.</span>
-                    <span class="track-name">caesar.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/bb.mp3" data-title="bb.mp3" role="option">
-                    <span class="track-index">2.</span>
-                    <span class="track-name">bb.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/lfms.mp3" data-title="lfms.mp3" role="option">
-                    <span class="track-index">3.</span>
-                    <span class="track-name">lfms.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/swaw.mp3" data-title="swaw.mp3" role="option">
-                    <span class="track-index">4.</span>
-                    <span class="track-name">swaw.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/fruity.mp3" data-title="fruity.mp3" role="option">
-                    <span class="track-index">5.</span>
-                    <span class="track-name">fruity.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/lw.mp3" data-title="lw.mp3" role="option">
-                    <span class="track-index">6.</span>
-                    <span class="track-name">lw.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/homey.mp3" data-title="homey.mp3" role="option">
-                    <span class="track-index">7.</span>
-                    <span class="track-name">homey.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/runt.mp3" data-title="runt.mp3" role="option">
-                    <span class="track-index">8.</span>
-                    <span class="track-name">runt.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/tub.mp3" data-title="tub.mp3" role="option">
-                    <span class="track-index">9.</span>
-                    <span class="track-name">tub.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/spaceslop.mp3" data-title="spaceslop.mp3" role="option">
-                    <span class="track-index">10.</span>
-                    <span class="track-name">spaceslop.mp3</span>
-                    </button>
-
-                    <button class="track-row" type="button" data-src="music/stupid_mode.mp3" data-title="stupid_mode.mp3" role="option">
-                    <span class="track-index">11.</span>
-                    <span class="track-name">stupid_mode.mp3</span>
-                    </button>
-                </div>
-
-                <!-- The actual audio element (hidden UI; we build our own controls) -->
-                <audio id="audio" preload="metadata"></audio>
-                </div>
+                <aside class="track-description-box">
+                    <h3 class="track-description-heading" id="trackDescriptionTitle">
+                        Select a track
+                    </h3>
+                    <p class="track-description-text" id="trackDescription">
+                        Select a track to view its description.
+                    </p>
+                </aside>
+            </div>
         </section>
-        <h2 class="header-bold">My Art</h2>
-                    <p class="caption">Here are my most recent drawings! Some of these were for my card game class project, Creature Cattleman, while others are drawings I made for others
-                        during ArtFight!
-            </p>
-        <section id="art">
-            <div class="art-box">
-                <img src="images/alien.png" alt="an alien I drew" class="funborder">
-                <p class="caption">an alien</p>
+
+        <section id="art-section" class="section-card">
+            <div class="section-heading">
+                <h2>My Art</h2>
+                <p class="section-description">
+                    A selection of recent drawings, including work made for class projects, personal concepts, and ArtFight pieces.
+                </p>
             </div>
-            <div class="art-box">
-                <img src="images/water.png" alt="benny" class="funborder">
-                <p class="caption">my character, Benny</p>
-            </div>
-            <div class="art-box">
-                <img src="images/pikachu.png" alt="freaking pikachu" class="funborder">
-                <p class="caption">pikachu</p>
-            </div>
-            <div class="art-box">
-                <img src="images/sandglas.png" alt="sandglas" class="funborder">
-                <p class="caption">artfight attack for sandglas</p>
-            </div>
-            <div class="art-box">
-                <img src="images/kimirika.png" alt="kimirika" class="funborder">
-                <p class="caption">artfight attack for kimirika</p>
-            </div>
-            <div class="art-box">
-                <img src="images/cattleman.png" alt="cattleman" class="funborder">
-                <p class="caption">box art for my board game, Creature Cattleman</p>
-            </div>
-            <div class="art-box">
-                <img src="images/concept.png" alt="concept art" class="funborder">
-                <p class="caption">concept art for Creature Cattleman</p>
-            </div>
-            <div class="art-box">
-                <img src="images/daytea.png" alt="daytea" class="funborder">
-                <p class="caption">artfight attack for daytea</p>
-            </div>
-            <div class="art-box">
-                <img src="images/album.jpg" alt="album concept" class="funborder">
-                <p class="caption">concept art for album</p>
+
+            <div class="section-divider"></div>
+
+            <div id="art">
+                <div class="art-box">
+                    <img src="images/alien.png" alt="An alien character illustration">
+                    <p class="caption">an alien</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/water.png" alt="Illustration of Benny">
+                    <p class="caption">my character, Benny</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/pikachu.png" alt="Pikachu illustration">
+                    <p class="caption">pikachu</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/sandglas.png" alt="ArtFight drawing for sandglas">
+                    <p class="caption">artfight attack for sandglas</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/kimirika.png" alt="ArtFight drawing for kimirika">
+                    <p class="caption">artfight attack for kimirika</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/cattleman.png" alt="Creature Cattleman box art">
+                    <p class="caption">box art for Creature Cattleman</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/concept.png" alt="Creature Cattleman concept art">
+                    <p class="caption">concept art for Creature Cattleman</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/daytea.png" alt="ArtFight drawing for daytea">
+                    <p class="caption">artfight attack for daytea</p>
+                </div>
+                <div class="art-box">
+                    <img src="images/album.jpg" alt="Album concept art">
+                    <p class="caption">concept art for album</p>
+                </div>
             </div>
         </section>
     </main>
+
     <script src="music-player.js"></script>
 </body>
 </html>
