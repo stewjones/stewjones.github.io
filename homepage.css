@@ -342,6 +342,7 @@ body {
   flex: 1;
   text-align: left;
   color: var(--text);
+  font-family: "Funnel Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -433,7 +434,7 @@ a:active {
   }
 
   .intro-image {
-    max-width: 420px;
+    max-width: 100%;
   }
 
   .music-layout {
