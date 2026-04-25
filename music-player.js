@@ -21,6 +21,9 @@ const tracks = [
 // ===== 2) Everything below is the player logic =====
 const audio = document.getElementById("audio");
 
+// Set default volume (0.0 → 1.0)
+audio.volume = 0.5;
+
 const trackList = document.getElementById("trackList");
 const trackDescription = document.getElementById("trackDescription");
 const trackDescriptionTitle = document.getElementById("trackDescriptionTitle");
@@ -29,7 +32,7 @@ const npTitle = document.getElementById("npTitle");
 const npTime = document.getElementById("npTime");
 const npDuration = document.getElementById("npDuration");
 const npProgress = document.getElementById("npProgress");
-
+const npVolume = document.getElementById("npVolume");
 
 let rows = []; // will be created
 let selectedRow = null;
@@ -123,6 +126,10 @@ npPlay.addEventListener("click", () => {
 // Metadata -> duration
 audio.addEventListener("loadedmetadata", () => {
   npDuration.textContent = fmtTime(audio.duration);
+});
+
+npVolume.addEventListener("input", () => {
+  audio.volume = npVolume.value;
 });
 
 // Time/progress updates
